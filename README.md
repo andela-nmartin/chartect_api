@@ -1,2 +1,2 @@
-# project_charts_api
-Built by DJANGO for the `project_charts` Angular project.
+# project_charts_api (_Python_)
+Django RESTful API for the `project_charts` Angular project.
