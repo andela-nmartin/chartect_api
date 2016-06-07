@@ -4,7 +4,7 @@ from project_charts_api.api.serializers import axis_data
 from rest_framework import viewsets
 from rest_framework.response import Response
 
-class AxisLabelsViewSet(viewsets.ViewSet):
+class AxisDataViewSet(viewsets.ViewSet):
     """
     A simple ViewSet for listing or retrieving users.
     """

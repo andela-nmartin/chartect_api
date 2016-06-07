@@ -20,8 +20,8 @@ from project_charts_api.api.views import axis_data
 from project_charts_api.api.views import axis_labels
 
 router = DefaultRouter()
-router.register(r'axis_labels', axis_labels.AxisLabelsViewSet)
-router.register(r'axis_data', axis_data.AxisDataViewSet)
+router.register(r'axis_labels', axis_labels.AxisLabelsViewSet, base_name='axis_labels')
+router.register(r'axis_data', axis_data.AxisDataViewSet, base_name='axis_data')
 
 urlpatterns = [
     url(r'^', include(router.urls)),
