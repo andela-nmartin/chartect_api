@@ -16,8 +16,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
-from project_charts_api.api.views import axis_data
-from project_charts_api.api.views import axis_labels
+from project_charts_api.api.viewsets import axis_data
+from project_charts_api.api.viewsets import axis_labels
 
 router = DefaultRouter()
 router.register(r'axis_labels', axis_labels.AxisLabelsViewSet, base_name='axis_labels')
