@@ -16,14 +16,17 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
-from project_charts_api.api.viewsets import axis_data
-from project_charts_api.api.viewsets import axis_labels
+from rest_framework.urlpatterns import format_suffix_patterns
+from project_charts_api.api.views import axis_data
+from project_charts_api.api.views import axis_labels
 
-router = DefaultRouter()
-router.register(r'axis_labels', axis_labels.AxisLabelsViewSet, base_name='axis_labels')
-router.register(r'axis_data', axis_data.AxisDataViewSet, base_name='axis_data')
+# router = DefaultRouter()
 
 urlpatterns = [
-    url(r'^', include(router.urls)),
+    # url(r'^', include(router.urls)),
+    url(r'^axis_labels/', axis_labels.AxisLabels.as_view(), name='axis_labels'),
+    url(r'^axis_data/', axis_data.AxisData.as_view(), name='axis_data'),
     url(r'^admin/', admin.site.urls),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
