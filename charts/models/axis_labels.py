@@ -8,4 +8,4 @@ class Axis_Labels(models.Model):
     x_units = models.CharField(max_length=200)
     y_units = models.CharField(max_length=200)
     def __unicode__(self):
-        return self.name
+        return self.x_units

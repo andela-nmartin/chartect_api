@@ -9,4 +9,4 @@ class Axis_Data(models.Model):
     x = models.CharField(max_length=200)
     y = models.IntegerField(default=0)
     def __unicode__(self):
-        return self.name
+        return self.x
