@@ -17,15 +17,14 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
 from rest_framework.urlpatterns import format_suffix_patterns
-from project_charts_api.api.views import axis_data
-from project_charts_api.api.views import axis_labels
-
-# router = DefaultRouter()
+from project_charts_api.api.views import axis_data_views
+from project_charts_api.api.views import axis_labels_views
 
 urlpatterns = [
-    # url(r'^', include(router.urls)),
-    url(r'^axis_labels/', axis_labels.AxisLabels.as_view(), name='axis_labels'),
-    url(r'^axis_data/', axis_data.AxisData.as_view(), name='axis_data'),
+    url(r'^axis_labels/$', axis_labels_views.AxisLabels.as_view(), name='axis_labels'),
+    url(r'^axis_labels/(?P<pk>[0-9]+)/$', axis_labels_views.AxisLabels.as_view(), name='axis_labels'),
+    url(r'^axis_data/$', axis_data_views.AxisData.as_view(), name='axis_data'),
+    url(r'^axis_data/(?P<pk>[0-9]+)/', axis_data_views.AxisData.as_view(), name='axis_data'),
     url(r'^admin/', admin.site.urls),
 ]
 
